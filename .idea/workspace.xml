@@ -4,25 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ff791b-694e-4311-bab6-7294a0aa3e77" name="Changes" comment="sale service and product service add">
-      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/exceptions/BusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/api/controllers/ProductsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/requests/CreateProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/requests/UpdateProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/CreateProductResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/GetAllProductsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/GetProductResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/UpdateProductResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/rules/ProductBusinessRules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/entities/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/entities/enums/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="01ff791b-694e-4311-bab6-7294a0aa3e77" name="Changes" comment="product service update">
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/configuration/exceptions/RestExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/configuration/kafka/producer/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/configuration/mappers/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/events/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/producer/KafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/utils/constants/ExceptionTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/utils/constants/Paths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/utils/dto/ClientResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/utils/mappers/ModelMapperManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/utils/mappers/ModelMapperService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/utils/results/ExceptionResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-package/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/exceptions/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/utils/exceptions/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/atac5/OneDrive/Masaüstü/Turkcell ödevler/e-commerce-microservice/product-service/src/main/java/com/kodlamaio/productservice/entities",
+    "last_opened_file_path": "C:/Users/atac5/OneDrive/Masaüstü/Turkcell ödevler/e-commerce-microservice/common-package/src/main/java/com/kodlamaio/commonpackage/utils",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,15 +68,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\atac5\OneDrive\Masaüstü\Turkcell ödevler\e-commerce-microservice\common-package\src\main\java\com\kodlamaio\commonpackage\utils" />
+      <recent name="C:\Users\atac5\OneDrive\Masaüstü\Turkcell ödevler\e-commerce-microservice\common-package\src\main\java\com\kodlamaio\commonpackage" />
       <recent name="C:\Users\atac5\OneDrive\Masaüstü\Turkcell ödevler\e-commerce-microservice\product-service\src\main\java\com\kodlamaio\productservice\entities" />
       <recent name="C:\Users\atac5\OneDrive\Masaüstü\Turkcell ödevler\e-commerce-microservice\sale-service\src\main\java\com\kodlamaio\saleservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.kodlamaio.commonpackage.exceptions" />
-      <recent name="com.kodlamaio.productservice.business.rules" />
-      <recent name="com.kodlamaio.productservice.business.dto.responses" />
-      <recent name="com.kodlamaio.productservice.business.dto.requests" />
-      <recent name="com.kodlamaio.productservice.repository" />
+      <recent name="com.kodlamaio.commonpackage.utils.constants" />
+      <recent name="com.kodlamaio.commonpackage.utils.dto" />
+      <recent name="com.kodlamaio.commonpackage.utils.mappers" />
+      <recent name="com.kodlamaio.productservice.business.concretes" />
+      <recent name="com.kodlamaio.productservice.business.abstracts" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
@@ -94,6 +92,13 @@
     <configuration name="CommonPackageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="common-package" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodlamaio.commonpackage.CommonPackageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodlamaio.configserver.ConfigServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -132,7 +137,7 @@
       <workItem from="1684308471289" duration="522000" />
       <workItem from="1685259293929" duration="72000" />
       <workItem from="1685278099207" duration="75000" />
-      <workItem from="1685347903813" duration="1425000" />
+      <workItem from="1685347903813" duration="4631000" />
     </task>
     <task id="LOCAL-00001" summary="api-gateway added">
       <created>1684301272944</created>
@@ -162,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684502244878</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="product service update">
+      <created>1685350487101</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685350487101</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +185,7 @@
     <MESSAGE value="api-gateway dependencies added and application.yml edited" />
     <MESSAGE value="common package module added" />
     <MESSAGE value="sale service and product service add" />
-    <option name="LAST_COMMIT_MESSAGE" value="sale service and product service add" />
+    <MESSAGE value="product service update" />
+    <option name="LAST_COMMIT_MESSAGE" value="product service update" />
   </component>
 </project>
