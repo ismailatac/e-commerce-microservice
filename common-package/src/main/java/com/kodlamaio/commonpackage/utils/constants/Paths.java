@@ -6,5 +6,8 @@ public class Paths {
     public static class Product {
         public static final String ServiceBasePackage = "com.kodlamaio.productservice";
     }
+    public static class Sale {
+        public static final String ServiceBasePackage = "com.kodlamaio.saleservice";
+    }
 
 }

@@ -1,9 +1,12 @@
 package com.kodlamaio.saleservice;
 
+import com.kodlamaio.commonpackage.utils.constants.Paths;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
+@EnableDiscoveryClient
+@SpringBootApplication(scanBasePackages = {Paths.ConfigurationBasePackage,Paths.Sale.ServiceBasePackage})
 public class SaleServiceApplication {
 
 	public static void main(String[] args) {
