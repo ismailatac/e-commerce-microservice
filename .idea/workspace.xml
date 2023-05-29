@@ -4,17 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ff791b-694e-4311-bab6-7294a0aa3e77" name="Changes" comment="common package module added">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="01ff791b-694e-4311-bab6-7294a0aa3e77" name="Changes" comment="sale service and product service add">
+      <change afterPath="$PROJECT_DIR$/common-package/src/main/java/com/kodlamaio/commonpackage/exceptions/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/api/controllers/ProductsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/requests/CreateProductRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/requests/UpdateProductRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/CreateProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/GetAllProductsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/GetProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/dto/responses/UpdateProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/business/rules/ProductBusinessRules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/entities/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/entities/enums/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/kodlamaio/productservice/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-package/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-package/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,15 +61,28 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/atac5/OneDrive/Masaüstü/Turkcell ödevler/e-commerce-microservice",
+    "last_opened_file_path": "C:/Users/atac5/OneDrive/Masaüstü/Turkcell ödevler/e-commerce-microservice/product-service/src/main/java/com/kodlamaio/productservice/entities",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "26d99253644cfc3decbacf9dcf9ab712",
+    "spring.configuration.checksum": "b9f465a2f524caad4920beb9f936a023",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\atac5\OneDrive\Masaüstü\Turkcell ödevler\e-commerce-microservice\product-service\src\main\java\com\kodlamaio\productservice\entities" />
+      <recent name="C:\Users\atac5\OneDrive\Masaüstü\Turkcell ödevler\e-commerce-microservice\sale-service\src\main\java\com\kodlamaio\saleservice" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kodlamaio.commonpackage.exceptions" />
+      <recent name="com.kodlamaio.productservice.business.rules" />
+      <recent name="com.kodlamaio.productservice.business.dto.responses" />
+      <recent name="com.kodlamaio.productservice.business.dto.requests" />
+      <recent name="com.kodlamaio.productservice.repository" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
@@ -72,6 +105,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="product-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodlamaio.productservice.ProductServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SaleServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="sale-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kodlamaio.saleservice.SaleServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,6 +130,9 @@
       <updated>1684300812493</updated>
       <workItem from="1684300813542" duration="1953000" />
       <workItem from="1684308471289" duration="522000" />
+      <workItem from="1685259293929" duration="72000" />
+      <workItem from="1685278099207" duration="75000" />
+      <workItem from="1685347903813" duration="1425000" />
     </task>
     <task id="LOCAL-00001" summary="api-gateway added">
       <created>1684301272944</created>
@@ -105,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684302152533</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="sale service and product service add">
+      <created>1684502244878</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684502244878</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +172,7 @@
     <MESSAGE value="api-gateway added" />
     <MESSAGE value="api-gateway dependencies added and application.yml edited" />
     <MESSAGE value="common package module added" />
-    <option name="LAST_COMMIT_MESSAGE" value="common package module added" />
+    <MESSAGE value="sale service and product service add" />
+    <option name="LAST_COMMIT_MESSAGE" value="sale service and product service add" />
   </component>
 </project>
