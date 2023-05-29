@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,6 +14,6 @@ import java.time.LocalDateTime;
 @Setter
 public class UpdateSaleRequest {
     private LocalDateTime date;
-    private int productId;
+    private UUID productId;
     private int quantityToBeSold;
 }

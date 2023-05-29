@@ -7,12 +7,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class CreateSaleRequest {
-    private int productId;
+    private UUID productId;
     private PaymentRequest paymentRequest;
     private int quantityToBeSold;
 }

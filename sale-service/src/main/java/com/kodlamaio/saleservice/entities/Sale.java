@@ -23,6 +23,6 @@ public class Sale {
     private double totalPrice;
     private LocalDateTime date;
     private int quantityToBeSold;
-    private int productId;
+    private UUID productId;
 
 }

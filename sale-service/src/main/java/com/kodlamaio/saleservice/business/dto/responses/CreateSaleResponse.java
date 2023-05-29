@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class CreateSaleResponse {
-    private int id;
+    private UUID id;
     private double totalPrice;
     private LocalDateTime date;
     private int quantityToBeSold;
