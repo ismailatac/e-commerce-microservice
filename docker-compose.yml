@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  kafka:
+    container_name: kafka-ecommerce
+    image: bashj79/kafka-kraft
+    ports:
+      - "9092:9092"
+    volumes:
+      - kafka_data:/opt/kafka/kafka-logs
+  #    environment:
+  #      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://192.168.1.102:9092
+  mongodb:
+    container_name: filterdb-ecommerce
+    image: mongo
+    ports:
+      - "27017:27017"
+    #    environment:
+    #      MONGO_INITDB_ROOT_USERNAME: "turkcell"
+    #      MONGO_INITDB_ROOT_PASSWORD: "12345"
+
+    volumes:
+      - mongodb_data:/data/db
+  #      - "/data/db/"
+  maintenancedb:
+    container_name: maintenancedb-ecommerce
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_TCP_PORT=3306
+      - VIRTUAL_PORT=3306
+    volumes:
+      - maintenancedb_data:/data/db
+
+  
+  paymentdb:
+    container_name: paymentdb-ecommerce
+    image: mysql
+    ports:
+      - "3307:3307"
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_TCP_PORT=3307
+      - VIRTUAL_PORT=3307
+    volumes:
+      - paymentdb_data:/data/db
+
+  invoicedb:
+    container_name: invoicedb-ecommerce
+    image: mongo
+    ports:
+      - "27018:27018"
+    #    environment:
+    #      MONGO_INITDB_ROOT_USERNAME: "turkcell"
+    #      MONGO_INITDB_ROOT_PASSWORD: "12345"
+
+    volumes:
+      - invoicedb_data:/data/db
+  #      - "/data/db/"
+volumes:
+  kafka_data:
+  mongodb_data:
+  maintenancedb_data:
+  paymentdb_data:
+  invoicedb_data:

@@ -8,4 +8,5 @@ import java.util.UUID;
 @AllArgsConstructor
 public class SaleCreatedEvent implements Event{
     private UUID productId;
+    private int quantityToBeSold;
 }

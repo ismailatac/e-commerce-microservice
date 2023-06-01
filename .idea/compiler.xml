@@ -11,6 +11,7 @@
         <module name="payment-service" />
         <module name="common-package" />
         <module name="sale-service" />
+        <module name="invoice-service" />
         <module name="api-gateway" />
         <module name="product-service" />
       </profile>
@@ -25,6 +26,7 @@
       <module name="common-package" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
+      <module name="invoice-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
       <module name="sale-service" options="-parameters" />

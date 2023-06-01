@@ -1,8 +1,10 @@
 package com.kodlamaio.saleservice.business.concretes;
 
 
+import com.kodlamaio.commonpackage.events.InvoiceCreatedEvent;
 import com.kodlamaio.commonpackage.events.SaleCreatedEvent;
 import com.kodlamaio.commonpackage.producer.KafkaProducer;
+import com.kodlamaio.commonpackage.utils.dto.CreateInvoiceRequest;
 import com.kodlamaio.commonpackage.utils.dto.CreateSalePaymentRequest;
 import com.kodlamaio.commonpackage.utils.dto.GetProductResponse;
 import com.kodlamaio.commonpackage.utils.enums.State;
@@ -23,6 +25,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -37,7 +40,6 @@ public class SaleManager implements SaleService {
     private final ProductClient productClient;
     private final PaymentClient paymentClient;
     private final KafkaProducer producer;
-//    private final InvoiceService invoiceService;
 
 
     @Override
@@ -54,7 +56,7 @@ public class SaleManager implements SaleService {
         checkProductAvailabilityForSale(request);
         Sale sale = mapper.map(request, Sale.class);
         sale.setId(UUID.randomUUID());
-        sale.setDate(LocalDateTime.now());
+        sale.setDate(LocalDate.now());
 
         GetProductResponse product = productClient.getProductById(sale.getProductId());
         CreateSalePaymentRequest paymentRequest = new CreateSalePaymentRequest();
@@ -64,13 +66,13 @@ public class SaleManager implements SaleService {
 
         sale.setTotalPrice(getTotalPrice(product, sale.getQuantityToBeSold()));
         repository.save(sale);
-        reduceQuantityProducts(product.getId());
+        reduceQuantityProducts(product.getId(),request.getQuantityToBeSold());
         CreateSaleResponse response = mapper.map(sale, CreateSaleResponse.class);
 
 
-//        CreateInvoiceRequest invoiceRequest = new CreateInvoiceRequest();
-//        createInvoiceRequest(request, invoiceRequest, sale);
-//        invoiceService.add(invoiceRequest);
+        CreateInvoiceRequest invoiceRequest = new CreateInvoiceRequest();
+        createInvoiceRequest(request, invoiceRequest, sale);
+        sendKafkaInvoiceCreatedEvent(invoiceRequest);
 
         return response;
     }
@@ -115,23 +117,26 @@ public class SaleManager implements SaleService {
         return product.getPrice() * quantity;
     }
 
-    private void reduceQuantityProducts(UUID id) {
-        sendKafkaSaleCreatedEvent(id);
+    private void reduceQuantityProducts(UUID id, int quantityToBeSold) {
+        sendKafkaSaleCreatedEvent(id,quantityToBeSold);
     }
 
-    private void sendKafkaSaleCreatedEvent(UUID id) {
-        producer.sendMessage(new SaleCreatedEvent(id),"sale-created");
+    private void sendKafkaSaleCreatedEvent(UUID id,int quantityToBeSold) {
+        producer.sendMessage(new SaleCreatedEvent(id,quantityToBeSold),"sale-created");
     }
 
-//    private void createInvoiceRequest(CreateSaleRequest request, CreateInvoiceRequest invoiceRequest, Sale sale) {
-//        var product = productService.getById(request.getProductId());
-//
-//        invoiceRequest.setCardHolder(request.getPaymentRequest().getCardHolderName());
-//        invoiceRequest.setDate(sale.getDate());
-//        invoiceRequest.setProductName(product.getName());
-//        invoiceRequest.setTotalPrice(getTotalPrice(product, sale.getQuantityToBeSold()));
-//        invoiceRequest.setQuantityToBeSold(sale.getQuantityToBeSold());
-//    }
+    private void createInvoiceRequest(CreateSaleRequest request, CreateInvoiceRequest invoiceRequest, Sale sale) {
+        var product = productClient.getProductById(request.getProductId());
+
+        invoiceRequest.setCardHolder(request.getPaymentRequest().getCardHolderName());
+        invoiceRequest.setSaledAt(sale.getDate());
+        invoiceRequest.setProductName(product.getName());
+        invoiceRequest.setPrice(getTotalPrice(product, sale.getQuantityToBeSold()));
+        invoiceRequest.setQuantity(sale.getQuantityToBeSold());
+    }
+    private void sendKafkaInvoiceCreatedEvent(CreateInvoiceRequest invoiceRequest) {
+        producer.sendMessage(new InvoiceCreatedEvent(invoiceRequest), "invoice-created");
+    }
 
 }
 

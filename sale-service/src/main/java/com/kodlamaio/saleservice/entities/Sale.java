@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -21,7 +21,7 @@ public class Sale {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private double totalPrice;
-    private LocalDateTime date;
+    private LocalDate date;
     private int quantityToBeSold;
     private UUID productId;
 

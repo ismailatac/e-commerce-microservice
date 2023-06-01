@@ -1,5 +1,6 @@
 package com.kodlamaio.productservice.business.kafka.consumer;
 
+import com.kodlamaio.commonpackage.events.SaleCreatedEvent;
 import com.kodlamaio.commonpackage.utils.mappers.ModelMapperService;
 import com.kodlamaio.productservice.business.abstracts.ProductService;
 import com.kodlamaio.productservice.business.dto.requests.UpdateProductRequest;
@@ -20,9 +21,9 @@ public class SaleConsumer {
             topics = "sale-created",
             groupId = "product-sale-create"
     )
-    public void consume(UUID id){
-        Product productRequest = mapper.forRequest().map(service.getById(id), Product.class);
-        productRequest.setQuantity(productRequest.getQuantity() - 1);
+    public void consume(SaleCreatedEvent event){
+        Product productRequest = mapper.forRequest().map(service.getById(event.getProductId()), Product.class);
+        productRequest.setQuantity(productRequest.getQuantity() - event.getQuantityToBeSold());
         service.update(productRequest.getId(), mapper.forRequest().map(productRequest, UpdateProductRequest.class));
     }
 }
